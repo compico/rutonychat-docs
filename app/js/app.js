@@ -1,5 +1,9 @@
 // // Import vendor jQuery plugin example
 // import '~/app/libs/mmenu/docs/mmenu.js'
 
-let timer;
-document.addEventListener("DOMContentLoaded", () => {});
+import hljs from "highlight.js";
+import Collapse from "bootstrap";
+
+document.addEventListener("DOMContentLoaded", () => {
+  hljs.highlightAll();
+});

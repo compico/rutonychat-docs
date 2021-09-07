@@ -87,10 +87,7 @@ function scripts() {
 }
 
 function styles() {
-  return src([
-    `app/styles/${preprocessor}/*.*`,
-    `!app/styles/${preprocessor}/_*.*`,
-  ])
+  return src([`app/styles/${preprocessor}/*.*`, `!app/styles/${preprocessor}/_*.*`])
     .pipe(eval(`${preprocessor}glob`)())
     .pipe(eval(preprocessor)({ "include css": true }))
     .pipe(
@@ -107,23 +104,11 @@ function styles() {
 }
 
 function images() {
-  return src(["app/images/src/**/*"])
-    .pipe(changed("app/images/docs"))
-    .pipe(imagemin())
-    .pipe(dest("app/images/docs"))
-    .pipe(browserSync.stream());
+  return src(["app/images/src/**/*"]).pipe(changed("app/images/docs")).pipe(imagemin()).pipe(dest("app/images/docs")).pipe(browserSync.stream());
 }
 
 function buildcopy() {
-  return src(
-    [
-      "{app/js,app/css}/*.min.*",
-      "app/images/**/*.*",
-      "!app/images/src/**/*",
-      "app/fonts/**/*",
-    ],
-    { base: "app/" }
-  ).pipe(dest("docs"));
+  return src(["{app/js,app/css}/*.min.*", "app/images/**/*.*", "!app/images/src/**/*", "app/fonts/**/*"], { base: "app/" }).pipe(dest("docs"));
 }
 
 async function buildhtml() {
@@ -157,31 +142,12 @@ function deploy() {
 
 function startwatch() {
   watch(`app/styles/${preprocessor}/**/*`, { usePolling: true }, styles);
-  watch(
-    ["app/js/**/*.js", "!app/js/**/*.min.js"],
-    { usePolling: true },
-    scripts
-  );
+  watch(["app/js/**/*.js", "!app/js/**/*.min.js"], { usePolling: true }, scripts);
   watch("app/images/src/**/*", { usePolling: true }, images);
-  watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on(
-    "change",
-    browserSync.reload
-  );
+  watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on("change", browserSync.reload);
 }
 
 export { scripts, styles, images, deploy };
 export let assets = series(scripts, styles, images);
-export let build = series(
-  cleandist,
-  images,
-  scripts,
-  styles,
-  buildcopy,
-  buildhtml
-);
-export default series(
-  scripts,
-  styles,
-  images,
-  parallel(browsersync, startwatch)
-);
+export let build = series(cleandist, images, scripts, styles, buildcopy, buildhtml);
+export default series(scripts, styles, images, parallel(browsersync, startwatch));

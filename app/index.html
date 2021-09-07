@@ -3,15 +3,91 @@
   <head>
     <meta charset="utf-8" />
     <title>Timer</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="images/favicon.png" />
     <link rel="stylesheet" href="css/app.min.css" />
   </head>
 
   <body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="bi me-2" style="width: 32px; height: 32px">
+                <defs>
+                  <style>
+                    .a {
+                      fill: #23b6fb;
+                    }
+                    .b {
+                      fill: #42c0fb;
+                    }
+                    .c {
+                      fill: #fff;
+                    }
+                    .d {
+                      stroke: #fff;
+                      stroke-miterlimit: 10;
+                      stroke-width: 2px;
+                    }
+                  </style>
+                </defs>
+                <polygon class="a" points="112 256 111.33 191.25 0 191 0 0 256 0 112 256" />
+                <polygon class="b" points="112 256 178 192 256 191 256 0 112 256" />
+                <rect class="c" x="58" y="44" width="140" height="34" />
+                <rect class="c" x="58" y="104" width="140" height="34" />
+                <path
+                  class="d"
+                  d="M157.88,250.81h80.75a12.13,12.13,0,0,0,12.11-12.12V153.37H222.48a12.12,12.12,0,0,1-12.11-12.11V113H157.88a12.13,12.13,0,0,0-12.11,12.11V238.69A12.14,12.14,0,0,0,157.88,250.81Zm16.15-81h48.45a4,4,0,0,1,0,8.08H174a4,4,0,0,1,0-8.08Zm0,16.15h48.45a4,4,0,1,1,0,8.08H174a4,4,0,0,1,0-8.08Zm0,16.15h48.45a4,4,0,1,1,0,8.07H174a4,4,0,0,1,0-8.07Zm0,16.15h32.3a4,4,0,1,1,0,8.07H174a4,4,0,0,1,0-8.07Z"
+                />
+                <path class="d" d="M222.48,145.3h25.9l-29.94-29.93v25.89A4,4,0,0,0,222.48,145.3Z" />
+              </svg>
+              <span class="fs-6">Rutonychat - Docs</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+              <li class="nav-item">
+                <a href="#" class="nav-link btn-toggle text-white">Начало</a>
+              </li>
+              <li class="nav-item">
+                <a href="#basis" class="nav-link btn-toggle text-white">Общие принципы написания скриптов на C#</a>
+              </li>
+              <ul class="nav flex-column">
+                <button class="btn btn-toggle collapsed text-white" data-bs-toggle="collapse" data-bs-target="#remotecontrol-collapse" aria-expanded="true">RemoteControl</button>
+                <div class="collapse show" id="remotecontrol-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#remotecontrol" class="nav-link text-white">Описание</a></li>
+                    <li><a href="#remotecontrolfields" class="nav-link text-white">Поля</a></li>
+                  </ul>
+                </div>
+              </ul>
+            </ul>
+          </div>
+        </div>
+        <div class="col">
+          <main class="bd-main order-1 mt-5">
+            <div class="bd-intro ps-lg-4">
+              <h2 id="basis">Общие принципы написания скриптов на C#</h2>
+              <p>
+                <a
+                  href="https://github.com/rutony/rutonychat-testscripts/wiki/%D0%9E%D0%B1%D1%89%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2-%D0%B4%D0%BB%D1%8F-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B-RutonyChat"
+                >
+                  https://github.com/rutony/rutonychat-testscripts/wiki/Общие-принципы-написания-скриптов-для-программы-RutonyChat
+                </a>
+              </p>
+            </div>
+            <div class="bd-intro ps-lg-4">
+              <h2 id="remotecontrol">RemoteControl</h2>
+              <p></p>
+              <p id="remotecontrolfields">Поля:</p>
+              <pre><code class="language-csharp">public void main() {
+System.Console.Writeline("Hello World!" + 1 + "test");
+}</code></pre>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
     <script src="js/app.min.js"></script>
   </body>
 </html>
