@@ -2,7 +2,7 @@
 // import '~/app/libs/mmenu/docs/mmenu.js'
 
 import hljs from "highlight.js";
-import Collapse from "bootstrap";
+import ScrollSpy from "bootstrap";
 
 document.addEventListener("DOMContentLoaded", () => {
   hljs.highlightAll();
