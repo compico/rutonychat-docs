@@ -5,7 +5,8 @@
 {{ $searchJS := resources.Get "js/search.js" | resources.ExecuteAsTemplate $searchJSFile . | resources.Minify | fingerprint }}
 <script defer src="{{ $searchJS.RelPermalink }}"></script>
 {{ end }}
-
+<div id="snackbar"><div class="gdoc-toc">{{ .Page.TableOfContents }}</div></div>
+<script defer language="javascript" type="text/javascript"  src="/rutonychat-docs/js/script.js"></script>
 {{ if default true .Site.Params.GeekdocAnchorCopy }}
 <script defer src="{{ index .Site.Data.assets "js/clipboard.min.js" | relURL }}"></script>
 <script defer src="{{ index .Site.Data.assets "js/clipboard-loader.min.js" | relURL }}"></script>

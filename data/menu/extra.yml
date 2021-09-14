@@ -6,5 +6,5 @@ header:
     external: true
   - name: RutonyChat
     ref: https://store.steampowered.com/app/524660/RutonyChat/
-    icon: rutonychat
+    icon: steam
     external: true

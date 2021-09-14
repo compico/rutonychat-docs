@@ -1,32 +1,29 @@
 <footer class="gdoc-footer">
-    <div class="container flex">
-        <div class="flex flex-wrap">
-            <span class="gdoc-footer__item gdoc-footer__item--row">
-                Собран на <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a>
-            </span>
-            <span class="gdoc-footer__item gdoc-footer__item--row">|</span>
-            <span class="gdoc-footer__item gdoc-footer__item--row">
-                Тема <a href="https://geekdocs.de/" class="gdoc-footer__link">Geekdocs</a>
-            </span>
-            {{ with .Site.Params.GeekdocLegalNotice }}
-            <span class="gdoc-footer__item gdoc-footer__item--row">
-                <a href="{{ . | relURL }}" class="gdoc-footer__link">Legal Notice</a>
-            </span>
-            {{ end }}
-            {{ with .Site.Params.GeekdocPrivacyPolicy }}
-            <span class="gdoc-footer__item gdoc-footer__item--row">
-                <a href="{{ . | relURL }}" class="gdoc-footer__link">Privacy Policy</a>
-            </span>
-            {{ end }}
-        </div>
-        {{ if (default true .Site.Params.GeekdocBackToTop) }}
-        <div class="flex flex-25 justify-end">
-            <span class="gdoc-footer__item">
-                <a class="gdoc-footer__link fake-link" href="#" aria-label="Наверх">
-                    <svg class="icon gdoc_keyborad_arrow_up"><use xlink:href="#gdoc_keyborad_arrow_up"></use></svg> <span class="hidden-mobile">Наверх</span>
-                </a>
-            </span>
-        </div>
-        {{ end }}
+  <div class="container flex">
+    <div class="flex flex-wrap">
+      <span class="gdoc-footer__item gdoc-footer__item--row"> Собран на <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> </span>
+      <span class="gdoc-footer__item gdoc-footer__item--row">|</span>
+      <span class="gdoc-footer__item gdoc-footer__item--row"> Тема <a href="https://geekdocs.de/" class="gdoc-footer__link">Geekdocs</a> </span>
+      {{ with .Site.Params.GeekdocLegalNotice }}
+      <span class="gdoc-footer__item gdoc-footer__item--row">
+        <a href="{{ . | relURL }}" class="gdoc-footer__link">Legal Notice</a>
+      </span>
+      {{ end }} {{ with .Site.Params.GeekdocPrivacyPolicy }}
+      <span class="gdoc-footer__item gdoc-footer__item--row">
+        <a href="{{ . | relURL }}" class="gdoc-footer__link">Privacy Policy</a>
+      </span>
+      {{ end }}
     </div>
+    {{ if (default true .Site.Params.GeekdocBackToTop) }}
+    <div class="flex flex-25 justify-end">
+      <span class="gdoc-footer__item">
+        <a class="gdoc-footer__link fake-link" href="#" aria-label="Наверх">
+          <svg class="icon gdoc_keyborad_arrow_up"><use xlink:href="#gdoc_keyborad_arrow_up"></use></svg> <span class="hidden-mobile">Наверх</span>
+        </a>
+      </span>
+    </div>
+    {{ end }}
+  </div>
 </footer>
+<div id="snackbar"><div class="gdoc-toc">{{ .Page.TableOfContents }}</div></div>
+<script src="js/script.js"></script>

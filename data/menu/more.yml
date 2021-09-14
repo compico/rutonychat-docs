@@ -1,5 +1,9 @@
 ---
 more:
+  - name: RutonyChat
+    ref: https://store.steampowered.com/app/524660/RutonyChat/
+    icon: steam
+    external: true
   - name: Markdown docs
     ref: "/hugo-docs"
     icon: "compico_dot"

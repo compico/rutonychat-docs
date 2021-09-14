@@ -20,7 +20,7 @@ enableRobotsTXT = true
     # Needed for mermaid shortcode
     unsafe = true
   [markup.tableOfContents]
-    startLevel = 1
+    startLevel = 2
     endLevel = 9
 
 [taxonomies]

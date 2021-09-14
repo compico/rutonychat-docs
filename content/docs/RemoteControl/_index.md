@@ -25,7 +25,7 @@ RemoteControl.ListPresets.ForEach(delegate(RemoteControl.RemotePreset rp) {
 
 ## Поля
 
-###### ListPresets
+### ListPresets
 
 ```cs
 public static List<RemotePreset> ListPresets;
@@ -33,13 +33,13 @@ public static List<RemotePreset> ListPresets;
 
 Лист со всеми пресетами.
 
-###### isActive
+### isActive
 
 ```cs
 public static bool isActive = false;
 ```
 
-###### TypeAlert
+### TypeAlert
 
 ```cs
 public enum TypeAlert {
@@ -67,7 +67,7 @@ public enum TypeAlert {
 
 {{< /expand >}} -->
 
-###### TypeCondMessage
+### TypeCondMessage
 
 ```cs
 public enum TypeCondMessage {
@@ -78,7 +78,7 @@ public enum TypeCondMessage {
 
 Описание условий для текста
 
-###### ModifierKeys
+### ModifierKeys
 
 ```cs
 [Flags]
@@ -93,55 +93,104 @@ public enum ModifierKeys : uint {
 
 ## Методы
 
-###### CheckPresets
+В основном позволяют управлять пресетами из кода скрипта.
+
+{{< expand "Пример">}}
+Пример кода, где создаётся новый пресет и воспроизводится звук.
 
 ```cs
+RemoteControl.RemotePreset rp;                       // Создание переменной
+        public void InitParams(string param) {
+            rp = new RemoteControl.RemotePreset();   // Создание экзепляра класса RemotePreset
+            rp.SoundFile = "C:\\Path\\to\\file.mp3"; // Назначаем путь к файлу mp3
+            // (другие форматы, кроме mp3, не поддерживаются)
+            rp.SoundVolume = 25;                     // Назначаем громкость звука
+            RemoteControl.PlaySound(rp);             // Сам звук
+}
+```
+
+Важно понимать, что данный пресет будет находится только внутри памяти скрипта.
+
+И изменить его из-под программы RutonyChat, при помощи графического интерфейса никак нельзя.
+{{< /expand >}}
+
+### CheckPresets
+
+Метод запускающая все что ниже. Т.е все результаты пресета, если имеются.
+
+```cs
+public static void CheckPresets(RemotePreset preset) { }
+//Или
 public static void CheckPresets(RemotePreset preset, string var_nickname = "", string var_text = "", float var_value = 0) { }
 ```
 
-###### RunProgram
+{{< expand "Пример">}}
+
+{{< /expand >}}
+
+### RunProgram
+
+Метод для запуска программы прописанного внутри объекта `RemoteControl.ControlPreset`.
 
 ```cs
 public static void RunProgram(RemotePreset preset, string var_nickname = "", string var_text = "", float var_value = 0, string var_donor = "") { }
 ```
 
-###### PressKey
+Параметры нужны для передачи аргументов в программу
+
+`Возможно тут будет пример`
+
+### PressKey
+
+Метод для нажатия кнопки прописанного внутри объекта `RemoteControl.ControlPreset`.
 
 ```cs
 public static void PressKey(RemotePreset preset) { }
 ```
 
-###### PlaySound
+### PlaySound
+
+Метод для воспроизведения звука прописанная внутри объекта `RemoteControl.ControlPreset`.
 
 ```cs
 public static void PlaySound(RemotePreset preset) { }
 ```
 
-###### ShowCustomAlert
+### ShowCustomAlert
+
+Метод для показа ручного оповещения, прописанного внутри объекта `RemoteControl.ControlPreset`.
 
 ```cs
 public static void ShowCustomAlert(RemotePreset preset, string var_nick, string var_donate = "", string var_text = "") { }
 ```
 
-###### UpdateCounter
+### UpdateCounter
+
+Метод обновления счётчика.
 
 ```cs
 public static void UpdateCounter(int vnumber, int vvalue) { }
 ```
 
-###### RunTimerOper
+### RunTimerOper
+
+Запустить таймер прописанный внутри объекта `RemoteControl.ControlPreset`.
 
 ```cs
 public static void RunTimerOper(RemotePreset preset) { }
 ```
 
-###### RunBotCommand
+### RunBotCommand
+
+Запуск прессета бота прописанный внутри объекта `RemoteControl.ControlPreset`.
 
 ```cs
 public static void RunBotCommand(RemotePreset preset, string var_username, float var_value) { }
 ```
 
-###### RunScript
+### RunScript
+
+Запуск скрипта прописанный внутри объекта `RemoteControl.ControlPreset`.
 
 ```cs
 public static void RunScript(RemotePreset preset, string var_username, float var_value = 0) { }
