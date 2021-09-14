@@ -1,1 +1,23 @@
 /* You can add custom styles here. */
+
+h3 {
+  margin-bottom: 1em;
+  margin-left: 2px;
+}
+
+#TableOfContents ul {
+  padding-left: 30px;
+}
+
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 13%; /* Center the snackbar */
+  bottom: 60px; /* 30px from the bottom */
+}
+
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+}
