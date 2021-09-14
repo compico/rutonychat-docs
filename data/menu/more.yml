@@ -1,0 +1,5 @@
+---
+more:
+  - name: Markdown docs
+    ref: "/hugo-docs"
+    icon: "compico_dot"

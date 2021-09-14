@@ -1,0 +1,8 @@
+<svg width="0" height="0" class="svg-sprite">
+  <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-20 -30 280 280" id="rutonychat">
+    <path fill="#FFFFFF" d="M0,0v191l111.33,0.25L112,256l66-65h78V0H0z M198,138H58v-34h140V138z M198,78H58V44h140V78z"></path>
+  </symbol>
+  <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-8 -8 32 32" id="compico_dot">
+  <circle fill="#FFFFFF" cx="8" cy="8" r="8"/>
+  </symbol>
+</svg>

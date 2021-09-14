@@ -1,0 +1,13 @@
+---
+main:
+  - name: RutonyChat
+    ref: "/"
+    icon: "rutonychat"
+    sub:
+      - name: "Документация"
+        ref: "/docs"
+        icon: "compico_dot"
+        sub:
+          - name: RemoteControl
+            ref: "/RemoteControl"
+            icon: "gdoc_path"

@@ -1,0 +1,10 @@
+---
+header:
+  - name: GitHub
+    ref: https://github.com/compico/rutonychat-docs
+    icon: gdoc_github
+    external: true
+  - name: RutonyChat
+    ref: https://store.steampowered.com/app/524660/RutonyChat/
+    icon: rutonychat
+    external: true

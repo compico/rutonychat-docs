@@ -2,7 +2,6 @@
 <html lang="en" class="color-toggle-hidden">
 
 <head>
-	<meta name="generator" content="Hugo 0.88.1" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark" />
@@ -11,11 +10,12 @@
 
 
 
-    <meta name="description" content="Предупреждение    Данный сайт сделан не самим rutony - автором RutonyChat. Тут возможно найти отсебятину и прочие ошибки. Поэтому прошу, если найдёте вышеперечисленное, то пишите в issue.  ">
+    <meta name="description" content="public static class RemoteControl Данный класс позволяет управлять &ldquo;Удалённое управление&rdquo; из кода, менять свойства и состояние.
+Пример ↕  // Проходим по всем имеющимся пресетам удалённого управления RemoteControl.ListPresets.ForEach(delegate(RemoteControl.RemotePreset rp) { // На каждое найденный пресет - пишем название пресета в чат  RutonyBot.SayToWindow(string.Format(&#34;Preset : {0}&#34;, rp.Name)); // Если название пресета &#34;TestPreset&#34;, то отключаем его  if (rp.Name.Equals(&#34;TestPreset&#34;)) rp.Active = false; });    Поля    ListPresets    public static List&lt;RemotePreset&gt; ListPresets; Лист со всеми пресетами.">
 
 
 
-    <title>RutonyChat - Docs</title>
+    <title>RemoteControl | RutonyChat - Docs</title>
 
     <link rel="icon" href="/rutonychat-docs/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -212,7 +212,7 @@
             <span class="flex">
                 <svg class="icon rutonychat"><use xlink:href="#rutonychat"></use></svg>
                 <a href="/rutonychat-docs/"
-                    class="gdoc-nav__entry is-active">
+                    class="gdoc-nav__entry ">
                     RutonyChat
                 </a>
             </span>
@@ -280,7 +280,7 @@
             <span class="flex">
                 <svg class="icon gdoc_path"><use xlink:href="#gdoc_path"></use></svg>
                 <a href="/rutonychat-docs/docs/RemoteControl/"
-                    class="gdoc-nav__entry ">
+                    class="gdoc-nav__entry is-active">
                     RemoteControl
                 </a>
             </span>
@@ -392,7 +392,23 @@
             
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>RutonyChat - Docs</span><meta itemprop='position' content='2' /></li>
+        
+        
+        
+        
+    
+    
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/rutonychat-docs/' href='/rutonychat-docs/'><span itemprop='name'>RutonyChat - Docs</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/rutonychat-docs/docs/' href='/rutonychat-docs/docs/'><span itemprop='name'>Документация</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>RemoteControl</span><meta itemprop='position' content='4' /></li>
+    
+
+    
+
     
 
         </ol>
@@ -403,19 +419,196 @@
 
 
     <article class="gdoc-markdown gdoc-markdown__align--left">
-        <h1>RutonyChat - Docs</h1>
-        <blockquote class="gdoc-hint danger">
-  <div class="gdoc-page__anchorwrap">
-    <h2 id="предупреждение">
-        Предупреждение
-        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/#предупреждение" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Предупреждение" href="#%d0%bf%d1%80%d0%b5%d0%b4%d1%83%d0%bf%d1%80%d0%b5%d0%b6%d0%b4%d0%b5%d0%bd%d0%b8%d0%b5">
+        <h1>RemoteControl</h1>
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">RemoteControl</span>
+</code></pre></div><p>Данный класс позволяет управлять &ldquo;Удалённое управление&rdquo; из кода, менять свойства и состояние.</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="f658892f-0">
+    <span>Пример</span>
+    <span>↕</span>
+  </label>
+  <input id="f658892f-0" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="c1">// Проходим по всем имеющимся пресетам удалённого управления
+</span><span class="c1"></span><span class="n">RemoteControl</span><span class="p">.</span><span class="n">ListPresets</span><span class="p">.</span><span class="n">ForEach</span><span class="p">(</span><span class="k">delegate</span><span class="p">(</span><span class="n">RemoteControl</span><span class="p">.</span><span class="n">RemotePreset</span> <span class="n">rp</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// На каждое найденный пресет - пишем название пресета в чат
+</span><span class="c1"></span>    <span class="n">RutonyBot</span><span class="p">.</span><span class="n">SayToWindow</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">&#34;Preset : {0}&#34;</span><span class="p">,</span> <span class="n">rp</span><span class="p">.</span><span class="n">Name</span><span class="p">));</span>
+    <span class="c1">// Если название пресета &#34;TestPreset&#34;, то отключаем его
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">rp</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&#34;TestPreset&#34;</span><span class="p">))</span> <span class="n">rp</span><span class="p">.</span><span class="n">Active</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+  </div>
+</div>
+
+<div class="gdoc-page__anchorwrap">
+    <h2 id="поля">
+        Поля
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#поля" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Поля" href="#%d0%bf%d0%be%d0%bb%d1%8f">
             <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
-</div><p>Данный сайт сделан не самим rutony - автором RutonyChat. Тут возможно найти отсебятину и прочие ошибки. Поэтому прошу, если найдёте вышеперечисленное, то пишите в <a class="gdoc-markdown__link" href="https://github.com/compico/rutonychat-docs/issues">issue</a>.
-</blockquote>
-
-
+</div><div class="gdoc-page__anchorwrap">
+    <h6 id="listpresets">
+        ListPresets
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#listpresets" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ListPresets" href="#listpresets">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">RemotePreset</span><span class="p">&gt;</span> <span class="n">ListPresets</span><span class="p">;</span>
+</code></pre></div><p>Лист со всеми пресетами.</p>
+<div class="gdoc-page__anchorwrap">
+    <h6 id="isactive">
+        isActive
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#isactive" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor isActive" href="#isactive">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="n">isActive</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="typealert">
+        TypeAlert
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#typealert" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor TypeAlert" href="#typealert">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">enum</span> <span class="n">TypeAlert</span> <span class="p">{</span>
+    <span class="n">Follower</span><span class="p">,</span>    <span class="c1">// Бесплатный подписчик
+</span><span class="c1"></span>    <span class="n">Subscriber</span><span class="p">,</span>  <span class="c1">// Платный подписчик
+</span><span class="c1"></span>    <span class="n">Donate</span><span class="p">,</span>      <span class="c1">// Донат
+</span><span class="c1"></span>    <span class="n">Text</span><span class="p">,</span>        <span class="c1">// Сообщение
+</span><span class="c1"></span>    <span class="n">HotKey</span><span class="p">,</span>      <span class="c1">// Горячая клавиша
+</span><span class="c1"></span>    <span class="n">Host</span><span class="p">,</span>        <span class="c1">// Хост
+</span><span class="c1"></span>    <span class="n">NewViewer</span><span class="p">,</span>   <span class="c1">// Новый зритель
+</span><span class="c1"></span>    <span class="n">RankPromote</span><span class="p">,</span> <span class="c1">// Новый ранг
+</span><span class="c1"></span>    <span class="n">Like</span><span class="p">,</span>        <span class="c1">// Лайк
+</span><span class="c1"></span>    <span class="n">Repost</span><span class="p">,</span>      <span class="c1">// Репост
+</span><span class="c1"></span>    <span class="n">Gift</span><span class="p">,</span>        <span class="c1">// Подарок
+</span><span class="c1"></span>    <span class="n">Raid</span><span class="p">,</span>        <span class="c1">// Рейд
+</span><span class="c1"></span>    <span class="n">Request</span><span class="p">,</span>     <span class="c1">// Запрос
+</span><span class="c1"></span>    <span class="n">TwitchPoints</span> <span class="c1">// Twitch награды
+</span><span class="c1"></span><span class="p">};</span>
+</code></pre></div><p>Используется в RemotePreset.
+Показывает какой тип события активирует пресет.</p>
+<!-- 
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="66928e6c-1">
+    <span>Пример</span>
+    <span>↕</span>
+  </label>
+  <input id="66928e6c-1" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    
+  </div>
+</div>
+ -->
+<div class="gdoc-page__anchorwrap">
+    <h6 id="typecondmessage">
+        TypeCondMessage
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#typecondmessage" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor TypeCondMessage" href="#typecondmessage">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">enum</span> <span class="n">TypeCondMessage</span> <span class="p">{</span>
+    <span class="n">chance</span><span class="p">,</span>      <span class="c1">// Шанс в процентах
+</span><span class="c1"></span>    <span class="n">qty</span>          <span class="c1">// Количество сообщений
+</span><span class="c1"></span><span class="p">};</span>
+</code></pre></div><p>Описание условий для текста</p>
+<div class="gdoc-page__anchorwrap">
+    <h6 id="modifierkeys">
+        ModifierKeys
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#modifierkeys" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ModifierKeys" href="#modifierkeys">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="na">[Flags]</span>
+<span class="k">public</span> <span class="k">enum</span> <span class="n">ModifierKeys</span> <span class="p">:</span> <span class="kt">uint</span> <span class="p">{</span>
+    <span class="n">None</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+    <span class="n">Alt</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span>
+    <span class="n">Control</span> <span class="p">=</span> <span class="m">2</span><span class="p">,</span>
+    <span class="n">Shift</span> <span class="p">=</span> <span class="m">4</span><span class="p">,</span>
+    <span class="n">Win</span> <span class="p">=</span> <span class="m">8</span>
+<span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h2 id="методы">
+        Методы
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#методы" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Методы" href="#%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d1%8b">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div><div class="gdoc-page__anchorwrap">
+    <h6 id="checkpresets">
+        CheckPresets
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#checkpresets" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor CheckPresets" href="#checkpresets">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">CheckPresets</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_nickname</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_text</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="kt">float</span> <span class="n">var_value</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="runprogram">
+        RunProgram
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#runprogram" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor RunProgram" href="#runprogram">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">RunProgram</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_nickname</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_text</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="kt">float</span> <span class="n">var_value</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_donor</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="presskey">
+        PressKey
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#presskey" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor PressKey" href="#presskey">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">PressKey</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="playsound">
+        PlaySound
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#playsound" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor PlaySound" href="#playsound">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">PlaySound</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="showcustomalert">
+        ShowCustomAlert
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#showcustomalert" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ShowCustomAlert" href="#showcustomalert">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">ShowCustomAlert</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_nick</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_donate</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_text</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="updatecounter">
+        UpdateCounter
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#updatecounter" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor UpdateCounter" href="#updatecounter">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">UpdateCounter</span><span class="p">(</span><span class="kt">int</span> <span class="n">vnumber</span><span class="p">,</span> <span class="kt">int</span> <span class="n">vvalue</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="runtimeroper">
+        RunTimerOper
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#runtimeroper" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor RunTimerOper" href="#runtimeroper">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">RunTimerOper</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="runbotcommand">
+        RunBotCommand
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#runbotcommand" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor RunBotCommand" href="#runbotcommand">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">RunBotCommand</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_username</span><span class="p">,</span> <span class="kt">float</span> <span class="n">var_value</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div><div class="gdoc-page__anchorwrap">
+    <h6 id="runscript">
+        RunScript
+        <a data-clipboard-text="https://compico.github.io/rutonychat-docs/docs/RemoteControl/#runscript" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor RunScript" href="#runscript">
+            <svg class="icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h6>
+</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">RunScript</span><span class="p">(</span><span class="n">RemotePreset</span> <span class="n">preset</span><span class="p">,</span> <span class="kt">string</span> <span class="n">var_username</span><span class="p">,</span> <span class="kt">float</span> <span class="n">var_value</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>
     </article>
 
                 
@@ -443,57 +636,54 @@
             
 
             
+
+            
+        
+
+        
+        
+            
+    
+    
+
+    
+        
+        
+
+        
+        
+            
+            
+            
+
+            
+
+            
+
+            
+        
+
+        
+        
+            
+    
+    
+
+    
+        
+        
+
+        
+        
+            
+            
+            
+
+            
+
+            
                 
                 
-            
-
-            
-        
-
-        
-        
-            
-    
-    
-
-    
-        
-        
-
-        
-        
-            
-            
-            
-
-            
-                
-                
-            
-
-            
-
-            
-        
-
-        
-        
-            
-    
-    
-
-    
-        
-        
-
-        
-        
-            
-            
-            
-
-            
-
             
 
             
@@ -518,10 +708,10 @@
     
         <span class="gdoc-page__nav">
             
+                <a class="gdoc-page__nav--prev flex align-center" href="/rutonychat-docs/docs/" title="Документация"> Документация</a>
+            
         </span>
         <span class="gdoc-page__nav">
-            
-                <a class="gdoc-page__nav--next flex align-center" href="/rutonychat-docs/docs/" title="Документация">Документация </a>
             
         </span>
     
