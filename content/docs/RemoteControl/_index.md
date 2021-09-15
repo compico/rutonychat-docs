@@ -130,7 +130,7 @@ public static void CheckPresets(RemotePreset preset, string var_nickname = "", s
 
 ### RunProgram
 
-Метод для запуска программы прописанного внутри объекта `RemoteControl.ControlPreset`.
+Метод для запуска программы прописанного внутри объекта `RemoteControl.RemotePreset`.
 
 ```cs
 public static void RunProgram(RemotePreset preset, string var_nickname = "", string var_text = "", float var_value = 0, string var_donor = "") { }
@@ -142,7 +142,7 @@ public static void RunProgram(RemotePreset preset, string var_nickname = "", str
 
 ### PressKey
 
-Метод для нажатия кнопки прописанного внутри объекта `RemoteControl.ControlPreset`.
+Метод для нажатия кнопки прописанного внутри объекта `RemoteControl.RemotePreset`.
 
 ```cs
 public static void PressKey(RemotePreset preset) { }
@@ -150,7 +150,7 @@ public static void PressKey(RemotePreset preset) { }
 
 ### PlaySound
 
-Метод для воспроизведения звука прописанная внутри объекта `RemoteControl.ControlPreset`.
+Метод для воспроизведения звука прописанная внутри объекта `RemoteControl.RemotePreset`.
 
 ```cs
 public static void PlaySound(RemotePreset preset) { }
@@ -158,7 +158,7 @@ public static void PlaySound(RemotePreset preset) { }
 
 ### ShowCustomAlert
 
-Метод для показа ручного оповещения, прописанного внутри объекта `RemoteControl.ControlPreset`.
+Метод для показа ручного оповещения, прописанного внутри объекта `RemoteControl.RemotePreset`.
 
 ```cs
 public static void ShowCustomAlert(RemotePreset preset, string var_nick, string var_donate = "", string var_text = "") { }
@@ -174,7 +174,7 @@ public static void UpdateCounter(int vnumber, int vvalue) { }
 
 ### RunTimerOper
 
-Запустить таймер прописанный внутри объекта `RemoteControl.ControlPreset`.
+Запустить таймер прописанный внутри объекта `RemoteControl.RemotePreset`.
 
 ```cs
 public static void RunTimerOper(RemotePreset preset) { }
@@ -182,7 +182,7 @@ public static void RunTimerOper(RemotePreset preset) { }
 
 ### RunBotCommand
 
-Запуск прессета бота прописанный внутри объекта `RemoteControl.ControlPreset`.
+Запуск прессета бота прописанный внутри объекта `RemoteControl.RemotePreset`.
 
 ```cs
 public static void RunBotCommand(RemotePreset preset, string var_username, float var_value) { }
@@ -190,7 +190,7 @@ public static void RunBotCommand(RemotePreset preset, string var_username, float
 
 ### RunScript
 
-Запуск скрипта прописанный внутри объекта `RemoteControl.ControlPreset`.
+Запуск скрипта прописанный внутри объекта `RemoteControl.RemotePreset`.
 
 ```cs
 public static void RunScript(RemotePreset preset, string var_username, float var_value = 0) { }

@@ -11,3 +11,7 @@ main:
           - name: RemoteControl
             ref: "/RemoteControl"
             icon: "gdoc_path"
+            sub:
+              - name: "RemotePreset"
+                ref: "/RemotePreset"
+                icon: "compico_dot"
